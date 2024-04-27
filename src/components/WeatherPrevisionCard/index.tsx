@@ -55,7 +55,7 @@ function WeatherPrevisionCard({ weatherForecast }: WeatherPrevisionCardProps) {
 
 
     return (
-        <div className='border border-zinc-900 p-2 rounded-md h-full'>
+        <div className='border p-2 rounded-md h-full'>
             <span className='text-sm'>Previsão para os próximos dias</span>
             <div className='w-full h-px bg-black'></div>
             <div className='flex gap-2 flex-col mt-2'>

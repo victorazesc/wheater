@@ -1,6 +1,8 @@
-import { Search } from 'lucide-react';
+import { MapPinned, Search } from 'lucide-react';
 import React, { useMemo, useState } from 'react';
 import { debounce } from 'lodash';
+import { ModeToggle } from '../ModeToggle';
+import { Button } from '../ui/button';
 
 interface SearchBarProps {
     onSearch: (query: string) => void;
@@ -35,19 +37,24 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, onGeoLocate }) => {
 
     return (
         <div className='p-4 flex gap-4 justify-between w-full'>
-            <div className='flex items-center gap-2 border border-black rounded-md p-1 pl-2'>
+            <div className='flex items-center gap-2 border rounded-md p-1 pl-2'>
                 <Search size={20} />
                 <input
                     type='text'
                     placeholder='Buscar'
                     value={value}
-                    className='p-1 outline-none border-none shadow-none !px-0'
+                    className='p-1 outline-none border-none shadow-none dark:bg-slate-950 !px-0'
                     onChange={handleInputChange}
                     onKeyPress={handleKeyPress}
                 />
             </div>
-
-            <button onClick={handleGeoLocate} className='border border-zinc-900 rounded-md pl-2 pr-2'>Usar minha Localização</button>
+            <div className='flex gap-2'>
+                <Button onClick={handleGeoLocate} variant="outline" size="icon" className='border-input'>
+                    <MapPinned className='h-[1.2rem] w-[1.2rem]' />
+                    <span className="sr-only">Locate Me</span>
+                </Button>
+                <ModeToggle />
+            </div>
         </div>
     );
 };

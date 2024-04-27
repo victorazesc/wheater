@@ -7,6 +7,8 @@ import { getGeoLocation } from './libs/geoLocation'
 import { getWeatherData } from './libs/openWeather'
 import WeatherBoard from './components/WeatherBoard'
 import { Toaster, toast } from 'sonner'
+import { ThemeProvider } from './providers/ThemeProvider'
+
 
 function App() {
   const [location, setLocation] = React.useState({
@@ -74,21 +76,23 @@ function App() {
   }, [])
 
   return (
-    <div className='app'>
-      <div className='flex items-center justify-center flex-col max-w-screen-md w-full mx-auto'>
-        <header className='w-full flex justify-end'>
-          <SearchBar
-            onSearch={searchLocation}
-            onGeoLocate={geoLocate}
-          />
-        </header>
-        <main className='w-full'>
-          <WeatherCard weatherData={weatherData} />
-          <WeatherBoard weatherForecast={foreCastData} weatherData={weatherData} />
-          <Toaster richColors position='top-center' />
-        </main>
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <div className='app'>
+        <div className='flex items-center justify-center flex-col max-w-screen-md w-full mx-auto'>
+          <header className='w-full flex justify-end'>
+            <SearchBar
+              onSearch={searchLocation}
+              onGeoLocate={geoLocate}
+            />
+          </header>
+          <main className='w-full'>
+            <WeatherCard weatherData={weatherData} />
+            <WeatherBoard weatherForecast={foreCastData} weatherData={weatherData} />
+            <Toaster richColors position='top-center' />
+          </main>
+        </div>
       </div>
-    </div>
+    </ThemeProvider>
   )
 }
 

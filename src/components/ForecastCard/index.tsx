@@ -42,7 +42,7 @@ const ForecastCard: React.FC<ForecastCardProps> = ({ weatherForecast }) => {
     } = weatherForecast
 
     return (
-        <div className='border border-zinc-900 p-2 rounded-md h-32'>
+        <div className='border p-2 rounded-md h-32'>
             <span className='text-sm'>Previsão de temperaturas para hoje</span>
             <div className='w-full h-px bg-black'></div>
             <div className='flex gap-2 w-full justify-around mt-2'>

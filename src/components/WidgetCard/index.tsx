@@ -15,7 +15,7 @@ const WidgetCard: React.FC<WidgetCardProps> = ({ title, content, footer, TitleIc
     }
 
     return (
-        <a href={url ?? undefined} rel="noreferrer" target='_blank' className={`${!url ? 'cursor-default' : 'cursor-pointer'} border border-zinc-900 p-2 rounded-md flex flex-col items-center h-32`}>
+        <a href={url ?? undefined} rel="noreferrer" target='_blank' className={`${!url ? 'cursor-default' : 'cursor-pointer'} border p-2 rounded-md flex flex-col items-center h-32`}>
             <div className='text-xs flex items-center relative w-full'>
                 {TitleIcon && <span className="relative left-0"><TitleIcon size={16} /></span>}
                 <span className={`${TitleIcon && '-ml-3'} flex-grow text-center`}>{title}</span>
