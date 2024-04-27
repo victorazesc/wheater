@@ -10,7 +10,7 @@ interface ProcessedWeatherData { day: string, minTemp: number, maxTemp: number, 
 
 function WeatherPrevisionCard({ weatherForecast }: WeatherPrevisionCardProps) {
     const [processedData, setProcessedData] = useState<ProcessedWeatherData[]>([])
-    
+
     useEffect(() => {
         if (weatherForecast) {
             const weatherList: IForecastWeather[] = weatherForecast.list;
@@ -65,14 +65,12 @@ function WeatherPrevisionCard({ weatherForecast }: WeatherPrevisionCardProps) {
                         const weatherIcon: WeatherIconKey = item.icon ?? "default";
                         const IconComponent: React.ComponentType<any> = WeatherIcons[weatherIcon];
                         return (
-                            <>
-                                <div className='flex items-center gap-4 justify-around mt-2'>
-                                    <span className='w-10'>{item.day}</span>
-                                    <span className='w-8'>{<IconComponent />}</span>
-                                    <span className='w-16'>{item.maxTemp}°</span>
-                                    <span className='w-16'>{item.minTemp}°</span>
-                                </div>
-                            </>
+                            <div className='flex items-center gap-4 justify-around mt-2' key={Math.random()}>
+                                <span className='w-10'>{item.day}</span>
+                                <span className='w-8'>{<IconComponent />}</span>
+                                <span className='w-16'>{item.maxTemp}°</span>
+                                <span className='w-16'>{item.minTemp}°</span>
+                            </div>
                         )
                     })
                 }

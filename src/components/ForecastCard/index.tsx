@@ -50,7 +50,7 @@ const ForecastCard: React.FC<ForecastCardProps> = ({ weatherForecast }) => {
                 {
                     list.slice(0, 6).map((item) => {
                         type WeatherIconKey = keyof typeof WeatherIcons;
-                        const weatherIcon: WeatherIconKey = item.weather[0]?.icon ?? "default";
+                        const weatherIcon: WeatherIconKey = item.weather[0]?.icon as keyof typeof WeatherIcons ?? "default";
                         const IconComponent: React.ComponentType<any> = WeatherIcons[weatherIcon];
                         return (
                             <>
@@ -74,7 +74,7 @@ const ForecastCard: React.FC<ForecastCardProps> = ({ weatherForecast }) => {
                     list.slice(0, 6).map((item) => {
                         type WeatherIconKey = keyof typeof WeatherIcons;
 
-                        const weatherIcon: WeatherIconKey = item.weather[0]?.icon ?? "default";
+                        const weatherIcon: WeatherIconKey = item.weather[0]?.icon as keyof typeof WeatherIcons ?? "default";
 
                         const IconComponent: React.ComponentType<any> = WeatherIcons[weatherIcon];
                         return (

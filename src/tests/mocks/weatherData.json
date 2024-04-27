@@ -1,0 +1,47 @@
+{
+    "coord": {
+        "lon": -48.6347,
+        "lat": -26.9934
+    },
+    "weather": [
+        {
+            "id": 804,
+            "main": "Clouds",
+            "description": "nublado",
+            "icon": "04n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 24.42,
+        "feels_like": 25.45,
+        "temp_min": 22.03,
+        "temp_max": 24.43,
+        "pressure": 1013,
+        "humidity": 97
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 0.45,
+        "deg": 355,
+        "gust": 3.58
+    },
+    "rain": {
+        "1h": 1714190693
+    },
+    "clouds": {
+        "all": 100
+    },
+    "dt": 1714190693,
+    "sys": {
+        "type": 2,
+        "id": 2009978,
+        "country": "BR",
+        "sunrise": 1714210639,
+        "sunset": 1714250797
+    },
+    "timezone": -10800,
+    "id": 3471039,
+    "name": "Balneário Camboriú",
+    "cod": 200
+}

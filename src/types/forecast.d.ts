@@ -19,7 +19,7 @@ export interface IForecastWeather {
         id: number,
         main: string,
         description: string,
-        icon: WeatherIconKey
+        icon: string
     }[],
     clouds: {
         all: number
@@ -31,7 +31,7 @@ export interface IForecastWeather {
     },
     visibility: number,
     pop: number,
-    rain: {
+    rain?: {
         "3h": number
     },
     sys: {
