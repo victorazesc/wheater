@@ -26,5 +26,5 @@
       ]
     },
   },
-  "include": ["src", "src/tests"],
+  "include": ["src", "src/tests", "src/environment.d.ts"],
 }
