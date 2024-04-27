@@ -53,7 +53,7 @@ const ForecastCard: React.FC<ForecastCardProps> = ({ weatherForecast }) => {
                         const weatherIcon: WeatherIconKey = item.weather[0]?.icon as keyof typeof WeatherIcons ?? "default";
                         const IconComponent: React.ComponentType<any> = WeatherIcons[weatherIcon];
                         return (
-                            <>
+                            <div key={item.dt} data-testid="test-before-sunrise">
                                 {!compareTimes(getHours(item.dt_txt), convertTimeStampToHourAndMinute(city.sunrise)) &&
                                     <div key={item.dt} className='flex flex-col items-center'>
                                         <span>{getHours(item.dt_txt)}</span>
@@ -61,7 +61,7 @@ const ForecastCard: React.FC<ForecastCardProps> = ({ weatherForecast }) => {
                                         <span>{Math.ceil(item.main.temp)}°</span>
                                     </div>
                                 }
-                            </>
+                            </div>
                         )
                     })
                 }
@@ -78,7 +78,7 @@ const ForecastCard: React.FC<ForecastCardProps> = ({ weatherForecast }) => {
 
                         const IconComponent: React.ComponentType<any> = WeatherIcons[weatherIcon];
                         return (
-                            <>
+                            <div key={item.dt}  data-testid="test-after-sunrise">
                                 {compareTimes(getHours(item.dt_txt), convertTimeStampToHourAndMinute(city.sunrise)) === 1 &&
                                     <div className='flex flex-col items-center'>
                                         <span>{getHours(item.dt_txt)}</span>
@@ -86,7 +86,7 @@ const ForecastCard: React.FC<ForecastCardProps> = ({ weatherForecast }) => {
                                         <span>{Math.ceil(item.main.temp)}°</span>
                                     </div>
                                 }
-                            </>
+                            </div>
                         )
                     })
                 }
